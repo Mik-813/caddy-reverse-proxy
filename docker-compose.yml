@@ -6,6 +6,7 @@ services:
       - "443:443"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - caddy_data:/data 
     networks:
       - caddy_network
     restart: unless-stopped
@@ -14,3 +15,6 @@ networks:
   caddy_network:
     external: false
     name: caddy_network
+
+volumes:
+  caddy_data: {}
